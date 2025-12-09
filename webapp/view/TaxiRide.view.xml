@@ -7,7 +7,7 @@
             <Table
                 id="taxiRideTable"
                 inset="false"
-                items="{taxiModel>/}">
+                items="{path: 'taxiModel>/rides'}">
                 <headerToolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar">
                         <Title id="_IDGenTitle" text="Taxi Rides" level="H2"/>
@@ -53,12 +53,8 @@
                                 number="{taxiModel>DistanceKm}"
                                 unit="km"/>
                             <ObjectNumber id="_IDGenObjectNumber1"
-                                number="{
-                                    path: 'taxiModel>TotalPrice',
-                                    type: 'sap.ui.model.type.Currency',
-                                    formatOptions: {showMeasure: false}
-                                }"
-                                unit="{taxiModel>Currency}"/>
+    number="{taxiModel>TotalPrice}"
+    unit="{taxiModel>Currency}"/>
                             <ObjectStatus id="_IDGenObjectStatus1"
                                 text="{taxiModel>RideStatus}"
                                 state="{= ${taxiModel>RideStatus} === 'Completed' ? 'Success' : 'Warning' }"/>

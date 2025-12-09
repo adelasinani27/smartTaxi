@@ -8,7 +8,7 @@ sap.ui.define([
 ], function (Controller, JSONModel, Sorter, MessageToast, Filter, FilterOperator) {
     "use strict";
 
-    return Controller.extend("taxi.manual.controller.TaxiRide", {
+return Controller.extend("taxi.manual.taxiui5.controller.TaxiRide", {
         
         onInit: function () {
             // Create a JSON model to hold the taxi ride data
@@ -25,15 +25,10 @@ sap.ui.define([
             oDataModel.read(sPath, {
                 sorters: [new Sorter("RideID", false)],
                 success: function (oResponse) {
-                    console.log("Taxi rides loaded:", oResponse);
-                    
-                    // Set data to JSON model
-                    oTaxiJSONModel.setData(oResponse.results);
-                    
-                    // Bind model to view
+                    var aRides = oResponse.results;
+                    oTaxiJSONModel.setData({ rides: aRides });   // wrap into property 'rides'
                     that.getView().setModel(oTaxiJSONModel, "taxiModel");
-                    
-                    MessageToast.show("Loaded " + oResponse.results.length + " taxi rides");
+                    MessageToast.show("Loaded " + aRides.length + " taxi rides");
                 },
                 error: function (oError) {
                     console.error("Error loading taxi rides:", oError);

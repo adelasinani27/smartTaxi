@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (Controller, JSONModel, MessageToast) {
     "use strict";
 
-    return Controller.extend("taxi.manual.controller.Detail", {
+    return Controller.extend("taxi.manual.taxiui5.controller.Detail", {
         
         onInit: function () {
             var oRouter = this.getOwnerComponent().getRouter();
