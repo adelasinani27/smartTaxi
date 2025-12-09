@@ -1,0 +1,33 @@
+{
+  "generationParameters": {
+    "generationDate": "Mon Dec 08 2025 22:45:13 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP Cloud)",
+    "metadataFilename": "",
+    "serviceUrl": "https://f80d7f7e-8924-4544-9498-5524e9fd4ff1.abap.us10.hana.ondemand.com/sap/opu/odata4/sap/zui_taxi_ride_as_o4/srvd/sap/zui_taxi_ride_as_o4/0001/",
+    "appName": "taxi",
+    "appTitle": "Smart Taxi Ride",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.139.3",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.20.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "TaxiRide"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "_TaxiEvent"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}
