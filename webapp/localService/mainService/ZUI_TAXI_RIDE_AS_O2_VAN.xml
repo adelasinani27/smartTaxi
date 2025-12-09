@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zui_taxi_ride_as_o2/$metadata">
+        <edmx:Include Namespace="ZUI_TAXI_RIDE_AS_O2" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zui_taxi_ride_as_o2_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/LocalCreatedBy">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/LocalCreatedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/LocalLastChangedBy">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/LocalLastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/LastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiEventType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Taxi Ride Events"/>
+                            <PropertyValue Property="ID" String="TaxiEvents"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="RideId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EventId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Event Type"/>
+                            <PropertyValue Property="Value" Path="EventType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Event Date"/>
+                            <PropertyValue Property="Value" Path="EventDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Event Time"/>
+                            <PropertyValue Property="Value" Path="EventTime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocationDescription"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Note"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="RideId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EventId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Event Type"/>
+                            <PropertyValue Property="Value" Path="EventType"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Event Date"/>
+                            <PropertyValue Property="Value" Path="EventDate"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Event Time"/>
+                            <PropertyValue Property="Value" Path="EventTime"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocationDescription"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Note"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/cancelRide_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/Edit_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType/to_TaxiEvent_oc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.TaxiRideType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="ID" String="GeneralInfo"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="###GENERATED Core Data Service Entity"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="RideID"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="RideID"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                    <Annotation Term="Core.Messages">
+                        <Collection>
+                            <Record>
+                                <PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/>
+                                <PropertyValue Property="severity" String="error"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RideID"/>
+                            <PropertyValue Property="Value" Path="RideID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CustomerName"/>
+                            <PropertyValue Property="Value" Path="CustomerName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PickupAddress"/>
+                            <PropertyValue Property="Value" Path="PickupAddress"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DropoffAddress"/>
+                            <PropertyValue Property="Value" Path="DropoffAddress"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PickupDatetime"/>
+                            <PropertyValue Property="Value" Path="PickupDatetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DropoffDatetime"/>
+                            <PropertyValue Property="Value" Path="DropoffDatetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DistanceKm"/>
+                            <PropertyValue Property="Value" Path="DistanceKm"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BaseFare"/>
+                            <PropertyValue Property="Value" Path="BaseFare"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TotalPrice"/>
+                            <PropertyValue Property="Value" Path="TotalPrice"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverID"/>
+                            <PropertyValue Property="Value" Path="DriverID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PaymentMethod"/>
+                            <PropertyValue Property="Value" Path="PaymentMethod"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalCreatedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RideStatus"/>
+                            <PropertyValue Property="Value" Path="RideStatus"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalCreatedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalLastChangedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalLastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Cancel Ride"/>
+                            <PropertyValue Property="Action" String="cds_zui_taxi_ride_as_o4.cds_zui_taxi_ride_as_o4_Entities/cancelRide"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RideID"/>
+                            <PropertyValue Property="Value" Path="RideID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CustomerName"/>
+                            <PropertyValue Property="Value" Path="CustomerName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PickupAddress"/>
+                            <PropertyValue Property="Value" Path="PickupAddress"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DropoffAddress"/>
+                            <PropertyValue Property="Value" Path="DropoffAddress"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PickupDatetime"/>
+                            <PropertyValue Property="Value" Path="PickupDatetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DropoffDatetime"/>
+                            <PropertyValue Property="Value" Path="DropoffDatetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DistanceKm"/>
+                            <PropertyValue Property="Value" Path="DistanceKm"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BaseFare"/>
+                            <PropertyValue Property="Value" Path="BaseFare"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TotalPrice"/>
+                            <PropertyValue Property="Value" Path="TotalPrice"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverID"/>
+                            <PropertyValue Property="Value" Path="DriverID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PaymentMethod"/>
+                            <PropertyValue Property="Value" Path="PaymentMethod"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalCreatedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RideStatus"/>
+                            <PropertyValue Property="Value" Path="RideStatus"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalCreatedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalLastChangedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalLastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Status"/>
+                            <PropertyValue Property="Value" Path="Status"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Price per km"/>
+                            <PropertyValue Property="Value" Path="PricePerKm"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Cancel Ride"/>
+                            <PropertyValue Property="Action" String="cds_zui_taxi_ride_as_o4.cds_zui_taxi_ride_as_o4_Entities/cancelRide"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>RideID</PropertyPath>
+                        <PropertyPath>CustomerName</PropertyPath>
+                        <PropertyPath>PickupAddress</PropertyPath>
+                        <PropertyPath>DropoffAddress</PropertyPath>
+                        <PropertyPath>PickupDatetime</PropertyPath>
+                        <PropertyPath>DropoffDatetime</PropertyPath>
+                        <PropertyPath>DistanceKm</PropertyPath>
+                        <PropertyPath>BaseFare</PropertyPath>
+                        <PropertyPath>TotalPrice</PropertyPath>
+                        <PropertyPath>DriverID</PropertyPath>
+                        <PropertyPath>PaymentMethod</PropertyPath>
+                        <PropertyPath>LocalCreatedBy</PropertyPath>
+                        <PropertyPath>LocalCreatedAt</PropertyPath>
+                        <PropertyPath>LocalLastChangedBy</PropertyPath>
+                        <PropertyPath>LocalLastChangedAt</PropertyPath>
+                        <PropertyPath>LastChangedAt</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_taxi_ride_as_o4.cds_zui_taxi_ride_as_o4_Entities">
+                <Annotation Term="UI.LeadingEntitySet" String="TaxiRide"/>
+            </Annotations>
+            <Annotations Target="_Entities"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
