@@ -104,12 +104,24 @@
           "target": [
             "TargetTaxiRide"
           ]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "detail/{rideId}",
+          "target": [
+            "TargetDetail"
+          ]
         }
       ],
       "targets": {
         "TargetTaxiRide": {
           "id": "TaxiRide",
           "name": "TaxiRide"
+        },
+        
+          "TargetDetail": {
+          "id": "idDetail",
+          "name": "Detail"
         }
       }
     },

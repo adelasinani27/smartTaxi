@@ -1,6 +1,71 @@
 <mvc:View controllerName="taxi.manual.taxiui5.controller.TaxiRide"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    displayBlock="true">
     <Page id="page" title="{i18n>title}">
+    <content>
+            <Table
+                id="taxiRideTable"
+                inset="false"
+                items="{taxiModel>/}">
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar">
+                        <Title id="_IDGenTitle" text="Taxi Rides" level="H2"/>
+                        <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+                        <SearchField id="_IDGenSearchField" 
+                            width="50%" 
+                            placeholder="Search..."
+                            search="onSearch"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn" width="10em">
+                        <Text id="_IDGenText" text="Ride ID"/>
+                    </Column>
+                    <Column id="_IDGenColumn1" width="15em">
+                        <Text id="_IDGenText1" text="Customer Name"/>
+                    </Column>
+                    <Column id="_IDGenColumn2" width="20em">
+                        <Text id="_IDGenText2" text="Pickup Address"/>
+                    </Column>
+                    <Column id="_IDGenColumn3" width="20em">
+                        <Text id="_IDGenText3" text="Dropoff Address"/>
+                    </Column>
+                    <Column id="_IDGenColumn4" width="10em" hAlign="End">
+                        <Text id="_IDGenText4" text="Distance (km)"/>
+                    </Column>
+                    <Column id="_IDGenColumn5" width="10em" hAlign="End">
+                        <Text id="_IDGenText5" text="Total Price"/>
+                    </Column>
+                    <Column id="_IDGenColumn6" width="10em">
+                        <Text id="_IDGenText6" text="Status"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onRidePress">
+                        <cells>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier"
+                                title="{taxiModel>RideID}"/>
+                            <Text id="_IDGenText7" text="{taxiModel>CustomerName}"/>
+                            <Text id="_IDGenText8" text="{taxiModel>PickupAddress}"/>
+                            <Text id="_IDGenText9" text="{taxiModel>DropoffAddress}"/>
+                            <ObjectNumber id="_IDGenObjectNumber"
+                                number="{taxiModel>DistanceKm}"
+                                unit="km"/>
+                            <ObjectNumber id="_IDGenObjectNumber1"
+                                number="{
+                                    path: 'taxiModel>TotalPrice',
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions: {showMeasure: false}
+                                }"
+                                unit="{taxiModel>Currency}"/>
+                            <ObjectStatus id="_IDGenObjectStatus1"
+                                text="{taxiModel>RideStatus}"
+                                state="{= ${taxiModel>RideStatus} === 'Completed' ? 'Success' : 'Warning' }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
