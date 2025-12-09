@@ -149,6 +149,34 @@
                     "route": "TaxiEventObjectPage"
                   }
                 }
+              },
+              "content": {
+                "body": {
+                  "sections": {
+                    "TaxiRouteMap": {
+                      "template": "taxi.ext.fragment.TaxiRouteMap",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "GeneralInfo"
+                      },
+                      "title": "{i18n>route}"
+                    }
+                  }
+                },
+                "header": {
+                  "actions": {
+                    "OpenRouteInMaps": {
+                      "press": "taxi.ext.controller.TaxiRideObjectPageExt.onOpenRouteInMaps",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "{i18n>openRouteInMaps}",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "EditAction"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
