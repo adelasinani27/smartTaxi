@@ -45,15 +45,18 @@
                         <Text id="_IDGenText11" text="{detailModel>/DropoffAddress}"/>
 
                         <Label id="_IDGenLabel2" text="Pickup Time"/>
-                        <Text id="_IDGenText12" text="{detailModel>/PickupDatetime/ms}"/>
+                        <Text id="_IDGenText12" text="{ path: 'detailModel>/PickupDatetime',
+              formatter: '.formatter.timeFromMs' }"/>
 
                         <Label id="_IDGenLabel3" text="Dropoff Time"/>
-                        <Text id="_IDGenText13" text="{detailModel>/DropoffDatetime/ms}"/>
+                        <Text id="_IDGenText13" text="{ path: 'detailModel>/DropoffDatetime',
+              formatter: '.formatter.timeFromMs' }"/>
 
                         <Label id="_IDGenLabel4" text="Distance"/>
                         <ObjectNumber id="_IDGenObjectNumber2"
                             number="{detailModel>/DistanceKm}"
-                            unit="km"/>
+                            unit="km"
+                            state="{= ${detailModel>/DistanceKm} > 20 ? 'Error' : 'Success' }"/>
 
                         <core:Title id="_IDGenTitle2" text="Payment Information"/>
 

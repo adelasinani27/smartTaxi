@@ -518,6 +518,24 @@
                     <Parameter Name="RideID" Type="Edm.String" Mode="In" MaxLength="10"/>
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In" sap:label="Is active"/>
                 </FunctionImport>
+                <FunctionImport Name="createNewEntry" ReturnType="cds_zui_taxi_ride_as_o4.TaxiRideType" EntitySet="TaxiRide" m:HttpMethod="POST">
+                    <Parameter Name="RideID" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.String" Mode="In" MaxLength="1" Nullable="true"/>
+                    <Parameter Name="CustomerName" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true"/>
+                    <Parameter Name="PickupAddress" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                    <Parameter Name="DropoffAddress" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                    <Parameter Name="DistanceKm" Type="Edm.Decimal" Mode="In" Precision="5" Scale="1" Nullable="true"/>
+                    <Parameter Name="PaymentMethod" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="deleteRide" ReturnType="cds_zui_taxi_ride_as_o4.TaxiRideType" EntitySet="TaxiRide" m:HttpMethod="POST">
+                    <Parameter Name="RideID" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.String" Mode="In" MaxLength="1" Nullable="true"/>
+                    <Parameter Name="CustomerName" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true"/>
+                    <Parameter Name="PickupAddress" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                    <Parameter Name="DropoffAddress" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                    <Parameter Name="DistanceKm" Type="Edm.Decimal" Mode="In" Precision="5" Scale="1" Nullable="true"/>
+                    <Parameter Name="PaymentMethod" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
+                </FunctionImport>
                 <FunctionImport Name="TaxiRideDiscard" ReturnType="cds_zui_taxi_ride_as_o4.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zui_taxi_ride_as_o4.TaxiRideType">
                     <Parameter Name="RideID" Type="Edm.String" Mode="In" MaxLength="10"/>
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In" sap:label="Is active"/>
@@ -534,6 +552,15 @@
                 <FunctionImport Name="TaxiRideResume" ReturnType="cds_zui_taxi_ride_as_o4.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zui_taxi_ride_as_o4.TaxiRideType">
                     <Parameter Name="RideID" Type="Edm.String" Mode="In" MaxLength="10"/>
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In" sap:label="Is active"/>
+                </FunctionImport>
+                <FunctionImport Name="updateRide" ReturnType="cds_zui_taxi_ride_as_o4.TaxiRideType" EntitySet="TaxiRide" m:HttpMethod="POST">
+                    <Parameter Name="RideID" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.String" Mode="In" MaxLength="1" Nullable="true"/>
+                    <Parameter Name="CustomerName" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true"/>
+                    <Parameter Name="PickupAddress" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                    <Parameter Name="DropoffAddress" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                    <Parameter Name="DistanceKm" Type="Edm.Decimal" Mode="In" Precision="5" Scale="1" Nullable="true"/>
+                    <Parameter Name="PaymentMethod" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
                 </FunctionImport>
             </EntityContainer>
             <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>

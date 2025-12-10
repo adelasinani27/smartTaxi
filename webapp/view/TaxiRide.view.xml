@@ -7,9 +7,13 @@
             <Table
                 id="taxiRideTable"
                 inset="false"
+                mode="SingleSelectLeft"
+                selectionChange="onSelectionChange"
                 items="{path: 'taxiModel>/rides'}">
                 <headerToolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar">
+                        <Button id="_IDGenButton1" text="Create Ride" type="Emphasized" press="onCreateRide"/>
+                         <Button id="updateButton" text="Update Ride" type="Default" press="onUpdateRide" enabled="{= ${taxiModel>/selectedRide} !== undefined }"/>
                         <Title id="_IDGenTitle" text="Taxi Rides" level="H2"/>
                         <ToolbarSpacer id="_IDGenToolbarSpacer"/>
                         <SearchField id="_IDGenSearchField" 
@@ -19,6 +23,9 @@
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
+                <Column id="_IDGenColumn8" width="3em">
+                     <Text id="_IDGenText16" text=""/>
+                </Column>
                     <Column id="_IDGenColumn" width="10em">
                         <Text id="_IDGenText" text="Ride ID"/>
                     </Column>
@@ -44,6 +51,11 @@
                 <items>
                     <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onRidePress">
                         <cells>
+                        <Button id="_IDGenButton4" 
+        icon="sap-icon://delete" 
+        type="Reject"
+        press="onDeleteRide"
+        tooltip="Delete Ride"/>
                             <ObjectIdentifier id="_IDGenObjectIdentifier"
                                 title="{taxiModel>RideID}"/>
                             <Text id="_IDGenText7" text="{taxiModel>CustomerName}"/>
@@ -51,7 +63,8 @@
                             <Text id="_IDGenText9" text="{taxiModel>DropoffAddress}"/>
                             <ObjectNumber id="_IDGenObjectNumber"
                                 number="{taxiModel>DistanceKm}"
-                                unit="km"/>
+                                unit="km"
+                                state="{= ${taxiModel>DistanceKm} > 20 ? 'Error' : 'Success' }"/>
                             <ObjectNumber id="_IDGenObjectNumber1"
     number="{taxiModel>TotalPrice}"
     unit="{taxiModel>Currency}"/>

@@ -1,11 +1,15 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/m/MessageToast"
-], function (Controller, JSONModel, MessageToast) {
+    "sap/m/MessageToast",
+    "taxi/manual/taxiui5/formatter/Formatter"
+
+], function (Controller, JSONModel, MessageToast, Formatter) {
     "use strict";
 
     return Controller.extend("taxi.manual.taxiui5.controller.Detail", {
+
+        formatter: Formatter,
         
         onInit: function () {
             var oRouter = this.getOwnerComponent().getRouter();
@@ -13,6 +17,7 @@ sap.ui.define([
         },
 
         _onObjectMatched: function (oEvent) {
+            //debugger
             var sRideID = oEvent.getParameter("arguments").rideId;
             var that = this;
             

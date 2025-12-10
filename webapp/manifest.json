@@ -118,8 +118,7 @@
           "id": "TaxiRide",
           "name": "TaxiRide"
         },
-        
-          "TargetDetail": {
+        "TargetDetail": {
           "id": "idDetail",
           "name": "Detail"
         }

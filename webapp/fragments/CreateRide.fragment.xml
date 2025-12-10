@@ -1,0 +1,47 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    <Dialog
+        id="createRideDialog"
+        title="Create Taxi Ride"
+        >
+        <content>
+            <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+             
+                <Label id="_IDGenLabel16" text="Ride ID"/>
+<Input id="_IDGenInput5" value="{createModel>/RideID}"/>
+                <Label id="_IDGenLabel11" text="Customer Name"/>
+                <Input id="_IDGenInput" value="{createModel>/CustomerName}"/>
+
+                <Label id="_IDGenLabel12" text="Pickup Address"/>
+                <Input id="_IDGenInput1" value="{createModel>/PickupAddress}"
+                placeholder="Enter customer name"
+    liveChange="onNameChange"
+    valueState="{createModel>/nameState}"
+    valueStateText="{createModel>/nameStateText}"/>
+
+                <Label id="_IDGenLabel13" text="Dropoff Address"/>
+                <Input id="_IDGenInput2" value="{createModel>/DropoffAddress}"/>
+
+                <Label id="_IDGenLabel14" text="Distance (km)"/>
+                <Input id="_IDGenInput3" value="{createModel>/DistanceKm}" type="Number"/>
+
+                <Label id="_IDGenLabel15" text="Payment Method"/>
+                <!-- for now plain input; later replace with Select CASH/CARD -->
+                <Input id="_IDGenInput4" value="{createModel>/PaymentMethod}" placeholder="CASH or CARD"/>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button id="_IDGenButton2"
+                text="Save"
+                type="Emphasized"
+                press=".onSaveRide"/>
+        </beginButton>
+        <endButton>
+            <Button id="_IDGenButton3"
+                text="Cancel"
+                press=".onCancelCreate"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
