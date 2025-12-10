@@ -6,8 +6,10 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/ui/core/Fragment"
-], function (Controller, JSONModel, Sorter, MessageToast, Filter, FilterOperator, Fragment) {
+    "sap/ui/core/Fragment",
+    "sap/ui/export/Spreadsheet"
+
+], function (Controller, JSONModel, Sorter, MessageToast, MessageBox, Filter, FilterOperator, Fragment, Spreadsheet) {
     "use strict";
 
     return Controller.extend("taxi.manual.taxiui5.controller.TaxiRide", {
@@ -178,7 +180,7 @@ sap.ui.define([
             var oODataModel = this.getOwnerComponent().getModel();
             var that = this;
 
-            // Prepare parameters - INCLUDE RideID and IsActiveEntity
+            
             var mParams = {
                 RideID: oData.RideID,
                 IsActiveEntity: "X",  // Required if parameter entity has this field
@@ -437,6 +439,72 @@ _performDelete: function (sRideID) {
             MessageToast.show(sErrorMsg);
         }
     });
+},
+
+onExportToExcel: function () {
+    var oTable = this.byId("taxiRideTable");
+    var oBinding = oTable.getBinding("items");
+
+    if (!oBinding) {
+        MessageToast.show("No data available to export");
+        return;
+    }
+
+    // Get all current contexts (respects filters)
+    var aContexts = oBinding.getCurrentContexts();
+    var aData = aContexts.map(function(oContext) {
+        return oContext.getObject();
+    });
+
+    if (!aData || aData.length === 0) {
+        MessageToast.show("No rides to export");
+        return;
+    }
+
+    // Define columns for Excel
+    var aCols = [
+        { label: "Ride ID", property: "RideID" },
+        { label: "Customer Name", property: "CustomerName" },
+        { label: "Pickup Address", property: "PickupAddress" },
+        { label: "Dropoff Address", property: "DropoffAddress" },
+        { label: "Distance (km)", property: "DistanceKm", type: "Number" },
+        { label: "Total Price", property: "TotalPrice", type: "Number" },
+        { label: "Currency", property: "Currency" },
+        { label: "Payment Method", property: "PaymentMethod" },
+        { label: "Status", property: "RideStatus" }
+    ];
+
+    // Configure spreadsheet settings
+    var oSettings = {
+        workbook: {
+            columns: aCols,
+            hierarchyLevel: 'Level'
+        },
+        dataSource: aData,
+        fileName: "TaxiRides_" + new Date().toISOString().split('T')[0] + ".xlsx",
+        worker: false
+    };
+
+    // Create and build spreadsheet - THIS IS THE FIX
+    var oSpreadsheet = new Spreadsheet(oSettings);
+    oSpreadsheet.build()
+        .then(function () {
+            MessageToast.show("Excel file downloaded successfully!");
+        })
+        .catch(function (error) {
+            console.error("Export error:", error);
+            MessageToast.show("Error exporting to Excel");
+        })
+        .finally(function () {
+            oSpreadsheet.destroy();
+        });
+},
+
+
+onNavigateToDashboard: function () {
+    var oRouter = this.getOwnerComponent().getRouter();
+    oRouter.navTo("RouteDashboard");
 }
+
     });
 });

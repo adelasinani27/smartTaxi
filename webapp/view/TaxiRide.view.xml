@@ -12,8 +12,14 @@
                 items="{path: 'taxiModel>/rides'}">
                 <headerToolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar">
+                    <Button 
+            id="dashboardBtn"
+            icon="sap-icon://bar-chart" 
+            text="Dashboard"
+            press="onNavigateToDashboard"/>
                         <Button id="_IDGenButton1" text="Create Ride" type="Emphasized" press="onCreateRide"/>
                          <Button id="updateButton" text="Update Ride" type="Default" press="onUpdateRide" enabled="{= ${taxiModel>/selectedRide} !== undefined }"/>
+                         <Button id="exportButton" text="Export Excel" icon="sap-icon://excel-attachment" press="onExportToExcel"/>         
                         <Title id="_IDGenTitle" text="Taxi Rides" level="H2"/>
                         <ToolbarSpacer id="_IDGenToolbarSpacer"/>
                         <SearchField id="_IDGenSearchField" 
@@ -21,6 +27,7 @@
                             placeholder="Search..."
                             search="onSearch"/>
                     </OverflowToolbar>
+                    
                 </headerToolbar>
                 <columns>
                 <Column id="_IDGenColumn8" width="3em">

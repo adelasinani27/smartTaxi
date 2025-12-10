@@ -4,32 +4,45 @@
     xmlns:form="sap.ui.layout.form">
     <Dialog
         id="createRideDialog"
-        title="Create Taxi Ride"
-        >
+        title="Create Taxi Ride">
         <content>
             <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
              
                 <Label id="_IDGenLabel16" text="Ride ID"/>
-<Input id="_IDGenInput5" value="{createModel>/RideID}"/>
+                <Input id="_IDGenInput5" value="{createModel>/RideID}" enabled="false"/>
+                
                 <Label id="_IDGenLabel11" text="Customer Name"/>
-                <Input id="_IDGenInput" value="{createModel>/CustomerName}"/>
+                <Input id="_IDGenInput" 
+                    value="{createModel>/CustomerName}"
+                    placeholder="Enter customer name"
+                    liveChange="onNameChange"
+                    valueState="{createModel>/nameState}"
+                    valueStateText="{createModel>/nameStateText}"/>
 
                 <Label id="_IDGenLabel12" text="Pickup Address"/>
-                <Input id="_IDGenInput1" value="{createModel>/PickupAddress}"
-                placeholder="Enter customer name"
-    liveChange="onNameChange"
-    valueState="{createModel>/nameState}"
-    valueStateText="{createModel>/nameStateText}"/>
+                <Input id="_IDGenInput1" 
+                    value="{createModel>/PickupAddress}"
+                    placeholder="Enter pickup address"/>
 
                 <Label id="_IDGenLabel13" text="Dropoff Address"/>
-                <Input id="_IDGenInput2" value="{createModel>/DropoffAddress}"/>
+                <Input id="_IDGenInput2" 
+                    value="{createModel>/DropoffAddress}"
+                    placeholder="Enter dropoff address"/>
 
                 <Label id="_IDGenLabel14" text="Distance (km)"/>
-                <Input id="_IDGenInput3" value="{createModel>/DistanceKm}" type="Number"/>
+                <Input id="_IDGenInput3" 
+                    value="{createModel>/DistanceKm}" 
+                    type="Number"
+                    placeholder="Enter distance"/>
 
                 <Label id="_IDGenLabel15" text="Payment Method"/>
-                <!-- for now plain input; later replace with Select CASH/CARD -->
-                <Input id="_IDGenInput4" value="{createModel>/PaymentMethod}" placeholder="CASH or CARD"/>
+                <Select id="paymentMethodSelect" 
+                    selectedKey="{createModel>/PaymentMethod}">
+                    <items>
+                        <core:Item id="_IDGenItem3" key="Cash" text="Cash"/>
+                        <core:Item id="_IDGenItem4" key="Card" text="Card"/>
+                    </items>
+                </Select>
             </VBox>
         </content>
         <beginButton>

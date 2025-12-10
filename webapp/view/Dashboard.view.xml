@@ -1,0 +1,125 @@
+<mvc:View
+    controllerName="taxi.manual.taxiui5.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page id="dashboardPage" title="Taxi Ride Dashboard">
+        <content>
+            <!-- KPI Tiles -->
+            <layout:Grid id="_IDGenGrid"
+                defaultSpan="L3 M6 S12"
+                class="sapUiSmallMargin">
+                
+                <!-- Total Rides -->
+                <GenericTile id="_IDGenGenericTile"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                    header="Total Rides"
+                    press="onTilePress">
+                    <TileContent id="_IDGenTileContent">
+                        <NumericContent id="_IDGenNumericContent"
+                            value="{dashboardModel>/totalRides}"
+                            icon="sap-icon://car-rental"
+                            valueColor="Good"/>
+                    </TileContent>
+                </GenericTile>
+
+                <!-- Total Revenue -->
+                <GenericTile id="_IDGenGenericTile1"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                    header="Total Revenue">
+                    <TileContent id="_IDGenTileContent1">
+                        <NumericContent id="_IDGenNumericContent1"
+                            value="{dashboardModel>/totalRevenue}"
+                            scale="{dashboardModel>/currency}"
+                            icon="sap-icon://money-bills"
+                            valueColor="Good"/>
+                    </TileContent>
+                </GenericTile>
+
+                <!-- Average Distance -->
+                <GenericTile id="_IDGenGenericTile2"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                    header="Avg Distance">
+                    <TileContent id="_IDGenTileContent2">
+                        <NumericContent id="_IDGenNumericContent2"
+                            value="{dashboardModel>/avgDistance}"
+                            scale="km"
+                            icon="sap-icon://map"
+                            valueColor="Neutral"/>
+                    </TileContent>
+                </GenericTile>
+
+                <!-- Completed Rides -->
+                <GenericTile id="_IDGenGenericTile3"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                    header="Completed">
+                    <TileContent id="_IDGenTileContent3">
+                        <NumericContent id="_IDGenNumericContent3"
+                            value="{dashboardModel>/completedRides}"
+                            icon="sap-icon://accept"
+                            valueColor="Good"/>
+                    </TileContent>
+                </GenericTile>
+            </layout:Grid>
+
+            <!-- Payment Method Distribution -->
+            <VBox id="_IDGenVBox2" class="sapUiMediumMargin">
+                <Title id="_IDGenTitle4" text="Payment Methods" class="sapUiSmallMarginBottom"/>
+                <HBox id="_IDGenHBox">
+                    <VBox id="_IDGenVBox3" class="sapUiMediumMarginEnd">
+                        <core:Icon id="_IDGenIcon" src="sap-icon://money-bills" size="3rem" color="#2b7c2b"/>
+                        <Text id="_IDGenText17" text="Cash: {dashboardModel>/cashCount}" class="sapUiTinyMarginTop"/>
+                    </VBox>
+                    <VBox id="_IDGenVBox4">
+                        <core:Icon id="_IDGenIcon2" src="sap-icon://credit-card" size="3rem" color="#0854a0"/>
+                        <Text id="_IDGenText18" text="Card: {dashboardModel>/cardCount}" class="sapUiTinyMarginTop"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Recent Rides Table -->
+            <Table
+                id="recentRidesTable"
+                inset="false"
+                items="{path: 'dashboardModel>/recentRides'}"
+                class="sapUiSmallMargin">
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1">
+                        <Title id="_IDGenTitle5" text="Recent Rides" level="H2"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn7" width="10em">
+                        <Text id="_IDGenText19" text="Ride ID"/>
+                    </Column>
+                    <Column id="_IDGenColumn9" width="15em">
+                        <Text id="_IDGenText20" text="Customer"/>
+                    </Column>
+                    <Column id="_IDGenColumn10" width="10em" hAlign="End">
+                        <Text id="_IDGenText21" text="Price"/>
+                    </Column>
+                    <Column id="_IDGenColumn11" width="10em">
+                        <Text id="_IDGenText22" text="Status"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <Text id="_IDGenText23" text="{dashboardModel>RideID}"/>
+                            <Text id="_IDGenText24" text="{dashboardModel>CustomerName}"/>
+                            <ObjectNumber id="_IDGenObjectNumber6"
+                                number="{dashboardModel>TotalPrice}"
+                                unit="{dashboardModel>Currency}"/>
+                            <ObjectStatus id="_IDGenObjectStatus2"
+                                text="{dashboardModel>RideStatus}"
+                                state="{= ${dashboardModel>RideStatus} === 'Completed' ? 'Success' : 'Warning' }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

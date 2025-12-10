@@ -77,7 +77,14 @@
                             emphasized="true"/>
 
                         <Label id="_IDGenLabel8" text="Payment Method"/>
-                        <Text id="_IDGenText14" text="{detailModel>/PaymentMethod}"/>
+                        <HBox id="paymentMethodBox" alignItems="Center">
+                            <core:Icon id="_IDGenIcon1" 
+                                src="{= ${detailModel>/PaymentMethod} === 'Cash' ? 'sap-icon://money-bills' : 'sap-icon://credit-card' }"
+                                size="2rem"
+                                color="{= ${detailModel>/PaymentMethod} === 'Cash' ? '#2b7c2b' : '#0854a0' }"
+                                class="sapUiTinyMarginEnd"/>
+                            <Text id="_IDGenText14" text="{detailModel>/PaymentMethod}" class="sapUiMediumMarginBegin"/>
+                        </HBox>
 
                         <core:Title id="_IDGenTitle3" text="Driver Information"/>
 

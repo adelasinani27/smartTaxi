@@ -111,6 +111,13 @@
           "target": [
             "TargetDetail"
           ]
+        },
+        {
+          "name": "RouteDashboard",
+          "pattern": "dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
         }
       ],
       "targets": {
@@ -121,6 +128,14 @@
         "TargetDetail": {
           "id": "idDetail",
           "name": "Detail"
+        },
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard",
+          "viewType": "XML",
+          "viewPath": "taxi.manual.taxiui5.view",
+          "viewName": "Dashboard",
+          "controlAggregation": "pages"
         }
       }
     },
