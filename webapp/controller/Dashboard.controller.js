@@ -39,7 +39,7 @@ sap.ui.define([
                 totalRevenue += parseFloat(ride.TotalPrice || 0);
                 totalDistance += parseFloat(ride.DistanceKm || 0);
                 
-                if (ride.RideStatus === "Completed") {
+                if (ride.RideStatus === "COMPLETED") {
                     completedRides++;
                 }
                 
